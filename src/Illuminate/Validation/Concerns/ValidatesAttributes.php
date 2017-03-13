@@ -1027,7 +1027,7 @@ trait ValidatesAttributes
             return false;
         } elseif (is_string($value) && trim($value) === '') {
             return false;
-        } elseif ((is_array($value) || $value instanceof Countable) && count($value) < 1) {
+        } elseif ((is_array($value) || $value instanceof Countable) && count(array_filter($value)) < 1) {
             return false;
         } elseif ($value instanceof File) {
             return (string) $value->getPath() != '';
